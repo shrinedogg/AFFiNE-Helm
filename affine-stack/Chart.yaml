@@ -1,0 +1,12 @@
+apiVersion: v2
+name: affine-stack
+description: AFFiNE cloud with dependencies
+type: application
+version: 0.0.0
+appVersion: "0.26.3"
+dependencies:
+  - name: affine
+    repository: "file://../affine"
+  - name: manticoresearch
+    repository: "https://helm.manticoresearch.com"
+    condition: manticoresearch.enabled

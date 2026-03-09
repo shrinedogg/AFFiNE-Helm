@@ -15,6 +15,18 @@ global:
     hosts:
       - affine.pro
     tls: []
+  gateway:
+    # Set to true to create a Gateway API HTTPRoute instead of (or alongside) an Ingress.
+    enabled: false
+    # Name of the Gateway resource to attach to (required when enabled).
+    name: ''
+    # Namespace of the Gateway resource. Defaults to the same namespace as the HTTPRoute.
+    namespace: ''
+    # sectionName targets a specific listener on the Gateway (optional).
+    sectionName: ''
+    annotations: {}
+    # Hostnames to match. Defaults to global.ingress.hosts when not set.
+    hostnames: []
   secret:
     secretName: 'server-private-key'
     privateKey: ''
